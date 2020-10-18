@@ -1,0 +1,90 @@
+@import 'src/sass/variables.scss';
+
+.login-page h2 {
+  line-height: 48px;
+  text-align: center;
+}
+
+.login-page .content-input-wrapper:first-child {
+  margin-bottom: $margin-2;
+}
+
+.login-page .content-input-wrapper:nth-child(2) {
+  margin-bottom: 25px;
+}
+
+.login-page .input-item {
+  margin-top: $margin-4;
+
+  .input-wrapper {
+    max-width: 368px;
+    width: 100%;
+    display: block;
+
+    label {
+      margin-bottom: $margin-1;
+    }
+
+    .login {
+      background: url(../../assets/svg/account.svg) no-repeat 16px center;
+      margin-bottom: 15px;
+    }
+
+    .password {
+      background: url(../../assets/svg/password.svg) no-repeat 16px center;
+      margin-bottom: 25px;
+      padding-right: 46px !important;
+    }
+
+    input {
+      padding-left: 56px;
+    }
+
+    input:focus {
+      border-color: $blue-900;
+    }
+  }
+
+  button[type^="submit"] {
+    background: $gradient;
+    display: flex;
+    width: 77.27%;
+    justify-content: center;
+    color: $white;
+    padding: 18px 24px;
+    border-radius: 4px;
+    line-height: 21px;
+    font-size: $p2;
+    opacity: 1;
+    margin-left: auto;
+    margin-right: auto;
+    transition: opacity, box-shadow .2s;
+    box-shadow: $bs-normal-2;
+  }
+
+  button[type^="submit"]:hover {
+    opacity: .85;
+    box-shadow: $bs-hover-2;
+  }
+
+  button.look-pass {
+    margin-top: -61px;
+    margin-left: 326px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .login-page .input-item button[type^="submit"] {
+    width: 100%;
+  }
+
+  .login-page .input-item button.look-pass {
+    margin-left: 310px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .login-page .input-item button.look-pass {
+    margin-left: 284px;
+  }
+}
