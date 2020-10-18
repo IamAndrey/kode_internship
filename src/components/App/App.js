@@ -5,7 +5,7 @@ import LoginPage from "../../pages/LoginPage";
 import LoginVerificationPage from "../../pages/LoginVerificationPage";
 import PokemonsPage from "../../pages/PokemonsPage";
 import Pokemon from "../Pokemon/Pokemon";
-import './app.css'
+import './app.scss'
 
 function App() {
   return (
