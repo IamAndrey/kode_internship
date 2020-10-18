@@ -1,0 +1,48 @@
+// Переменные
+
+// Colors text
+$white          : #FFFFFF;
+$black          : #171A36;
+$gray-700       : #4C4E67;
+$gray-400       : #737697;
+$gray-200       : #C4C6D4;
+$gray-100       : #EAEBF0;
+$blue-900       : #0051EE;
+$gradient       : linear-gradient(180deg, #0054F7 0%, #200DFF 100%);
+$gradient-hover : linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), linear-gradient(180deg, #0054F7 0%, #200DFF 100%);
+$orange         : #E22A01;
+$success        : #F7FAFE;
+$error          : #FEF7F5;
+
+// Размеры шрифтов
+$h1 : 3em;       // 48px
+$h2 : 2em;       // 32px
+$h3 : 1.5em;     // 24px
+$h4 : 1.313em;   // 21px
+$p1 : 1.125em;   // 18px
+$p2 : 1em;       // 16px
+$p3 : 0.875em;   // 14px
+$p4 : 0.75em;    // 12px
+
+
+$margin-1    : 0.5rem;    // ( 8px )  1 уровень
+$margin-2    : 1rem;      // ( 16px ) 2 уровень
+$margin-3    : 1.5rem;    // ( 24px ) 3 уровень
+$margin-4    : 2rem;      // ( 32px ) 4 уровень
+$margin-5    : 2.5rem;    // ( 40px ) 5 уровень
+$margin-6    : 3rem;      // ( 48px ) 6 уровень
+$margin-7    : 3.5rem;    // ( 56px ) 7 уровень
+$margin-8    : 4rem;      // ( 64px ) 8 уровень
+
+
+$padding-1   : 0.75rem;   // ( 12px ) 1 уровень
+$padding-2   : 1rem;      // ( 16px ) 2 уровень
+$padding-3   : 1.5rem;    // ( 24px ) 3 уровень
+
+// Тени
+$bs-normal   : 0px 2px 4px rgba(10, 11, 15, 0.1), 0px 0px 2px rgba(10, 11, 15, 0.06);   // обычная тень
+$bs-normal-2 : 0px 4px 12px rgba(10, 11, 15, 0.1), 0px 0px 3px rgba(10, 11, 15, 0.06);  // обычная тень 2
+$bs-hover    : 0px 8px 24px rgba(10, 11, 15, 0.1), 0px 0px 2px rgba(10, 11, 15, 0.06);  // тень при наведении
+$bs-hover-2  : 0px 8px 24px rgba(10, 11, 15, 0.1), 0px 0px 2px rgba(10, 11, 15, 0.06);  // тень при наведении 2
+$bs-top_button : 0px 3px 8px rgba(10, 11, 15, 0.1), 0px 0px 2px rgba(10, 11, 15, 0.06);
+$bs-top_button-hover : 0px 12px 32px rgba(10, 11, 15, 0.1), 0px 0px 2px rgba(10, 11, 15, 0.06);
