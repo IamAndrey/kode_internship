@@ -1,10 +1,17 @@
 import React, {Fragment, useState} from "react";
 import {withRouter} from "react-router-dom";
+import {useSelector, useDispatch} from "react-redux";
 import './style.scss'
+import Spinner from "../Loader/Spinner/Spinner";
 
 const LoginVerification = () => {
 
     const [code, setCode] = useState('')
+
+    const {loading} = useSelector(
+        ({ui: {loading}}) => ({loading})
+    )
+    const dispatch = useDispatch()
 
     return (
         <Fragment>
@@ -18,10 +25,12 @@ const LoginVerification = () => {
                                 <input className="code input-info" onChange={(event) => setCode(event.target.value)}
                                        value={code}
                                        name="code" placeholder="Введите код из смс"
-                                       type="code" required minLength={6}/>
+                                       type="text" required minLength={6}/>
                             </div>
                         </div>
-                        <button type="submit" >Подтвердить</button>
+                        <button type="submit" disabled={loading}>
+                            {loading ? <Spinner /> : 'Подтвердить'}
+                        </button>
                     </form>
                 </div>
             </div>
