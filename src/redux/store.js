@@ -6,18 +6,20 @@ import {persistReducer, persistStore} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import authReducer from "./reducers/authReducer";
 import uiReducer from "./reducers/uiReducer";
+import errorReducer from "./reducers/errorReducer";
 
 const middleware = [thunk];
 
 const rootPersistConfig = {
     key: 'root',
     storage: storage,
-    blacklist: []
+    blacklist: ['ui']
 };
 
 const reducers = combineReducers({
     auth: authReducer,
-    ui: uiReducer
+    ui: uiReducer,
+    error: errorReducer
 });
 const persistedReducer = persistReducer(rootPersistConfig, reducers);
 
