@@ -1,7 +1,8 @@
-import {LOGIN, LOGOUT} from "../types";
+import {LOGIN, LOGOUT, NOT_VERIFIED, VERIFIED} from "../types";
 
 const initialState = {
-    authenticated: false
+    authenticated: false,
+    verified: false
 }
 
 export default function (state = initialState, action) {
@@ -14,6 +15,16 @@ export default function (state = initialState, action) {
         case LOGOUT:
             return {
                 authenticated: false
+            }
+        case VERIFIED:
+            return {
+                ...state,
+                verified: true
+            }
+        case NOT_VERIFIED:
+            return {
+                ...state,
+                verified: false
             }
         default:
             return state
