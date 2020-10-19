@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {login as entry} from "../../redux/actions/authActions";
 import './login.scss'
 import lookPass from '../../assets/svg/look-pass.svg'
+import Spinner from "../Loader/Spinner/Spinner";
 
 const Login = ({history}) => {
 
@@ -54,7 +55,9 @@ const Login = ({history}) => {
                             </button>
                         </div>
                     </div>
-                    <button type="submit">Войти</button>
+                    <button type="submit" disabled={loading}>
+                        {loading ? <Spinner /> : 'Войти'}
+                    </button>
                 </form>
             </div>
         </div>
