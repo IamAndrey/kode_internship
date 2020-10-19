@@ -13,17 +13,14 @@ const Login = ({history}) => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
 
-    const authenticated = useSelector(({auth: {authenticated}}) => authenticated)
+    const {authenticated, loading} = useSelector(({auth: {authenticated}, ui: {loading}}) => ({authenticated, loading}))
     const dispatch = useDispatch()
 
     const handleLogin = (event) => {
         event.preventDefault()
-        setTimeout(() => {
-            if (_USER_LOGIN === login && _USER_PASSWORD === password) {
-                entry()(dispatch)
-                history.push('/login-verification')
-            }
-        }, 2000)
+        if (_USER_LOGIN === login && _USER_PASSWORD === password) {
+            entry()(dispatch)
+        }
     }
 
     return (
@@ -34,21 +31,26 @@ const Login = ({history}) => {
                     <div className="content-input">
                         <div className="input-wrapper">
                             <label className="headline">Логин</label>
-                            <input className="login input-info" onChange={(event) => {setLogin(event.target.value)}}
+                            <input className="login input-info" onChange={(event) => {
+                                setLogin(event.target.value)
+                            }}
                                    value={login}
                                    name="login" placeholder="Введите логин"
                                    type="login" required minLength={3}/>
                         </div>
                         <div className="input-wrapper">
                             <label className="headline">Пароль</label>
-                            <input className="password input-info" onChange={(event) => {setPassword(event.target.value)}}
+                            <input className="password input-info" onChange={(event) => {
+                                setPassword(event.target.value)
+                            }}
                                    value={password}
                                    name="password" placeholder="Введите пароль"
                                    type="password" required minLength={6}/>
 
-                            <button onClick={() => {}} type="button" className="look-pass"
+                            <button onClick={() => {
+                            }} type="button" className="look-pass"
                                     data-for="look-pass" data-delay-show="200" data-tip="Показать пароль">
-                                <img src={lookPass} alt='icon' />
+                                <img src={lookPass} alt='icon'/>
                             </button>
                         </div>
                     </div>
