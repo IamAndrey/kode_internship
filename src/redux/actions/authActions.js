@@ -1,4 +1,4 @@
-import {LOADING_START, LOADING_STOP, LOGIN, LOGOUT} from "../types";
+import {LOADING_START, LOADING_STOP, LOGIN, LOGOUT, VERIFIED} from "../types";
 
 export const login = () => dispatch => {
     dispatch({type: LOADING_START})
@@ -11,3 +11,12 @@ export const login = () => dispatch => {
 export const logout = () => dispatch => {
     dispatch({type: LOGOUT})
 }
+
+export const verify = () => dispatch => {
+    dispatch({type: LOADING_START})
+    setTimeout(() => {
+        dispatch({type: VERIFIED})
+        dispatch({type: LOADING_STOP})
+    }, 2000)
+}
+
