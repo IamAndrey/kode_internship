@@ -16,6 +16,6 @@ export default function (state = initialState, action) {
                 authenticated: false
             }
         default:
-            return initialState
+            return state
     }
 }
