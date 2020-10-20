@@ -50,6 +50,31 @@
 
 }
 
+.login-verification-page .link {
+  margin-top: $margin-2;
+
+  a {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 21px
+  }
+
+  .back {
+    max-width: 60px;
+    width: 100%;
+    color: $gray-400;
+    display: block;
+    padding-bottom: 5px;
+    transition: .2s;
+    text-align: center;
+  }
+
+  .back:hover {
+    color: $blue-900;
+  }
+}
+
 @media screen and (max-width: 576px) {
   .login-verification-page .input-item button[type^="submit"] {
     width: 100%;

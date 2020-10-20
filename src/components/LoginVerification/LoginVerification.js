@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from "react";
-import {withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
 import './style.scss'
 import Spinner from "../Loader/Spinner/Spinner";
@@ -32,6 +32,9 @@ const LoginVerification = () => {
                             {loading ? <Spinner /> : 'Подтвердить'}
                         </button>
                     </form>
+                    <div className="link">
+                        <Link to="/login" className="back p2">Назад</Link>
+                    </div>
                 </div>
             </div>
 
