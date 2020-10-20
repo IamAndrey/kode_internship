@@ -2,7 +2,7 @@ import {CLEAR_SUCCESS, SET_SUCCESS} from "../types";
 
 const initialState = {
     success: {
-        message: null
+        code: null
     }
 }
 
@@ -13,7 +13,7 @@ export default function (state = initialState, action) {
                 ...state,
                 success: {
                     ...state.success,
-                    message: action.payload
+                    code: action.payload
                 }
             }
         case CLEAR_SUCCESS:

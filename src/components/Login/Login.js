@@ -1,11 +1,12 @@
 import React, {useState, useEffect, Fragment} from "react";
-import {withRouter} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
+import {withRouter} from "react-router-dom";
 import {login as entry} from "../../redux/actions/authActions";
 import {setError, clearError} from "../../redux/actions/errorActions";
+import {setSuccess} from "../../redux/actions/successActions";
 import './login.scss'
 import look from '../../assets/svg/look-pass.svg'
-import {lookPass} from "../../tools/lookPass";
+import {generateCode, lookPass} from "../../tools/lookPass";
 import Spinner from "../Loader/Spinner/Spinner";
 import ValidError from "../Modals/ValidError/ValidError";
 
@@ -27,11 +28,18 @@ const Login = ({history}) => {
     const handleLogin = (event) => {
         event.preventDefault()
         if (_USER_LOGIN === login && _USER_PASSWORD === password) {
+            setSuccess(generateCode())(dispatch)
             entry()(dispatch)
         } else {
             setError(_ERROR_MESSAGE)(dispatch)
         }
     }
+
+    useEffect(() => {
+        if (authenticated) {
+            history.push('/login-verification')
+        }
+    })
 
     return (
         <Fragment>

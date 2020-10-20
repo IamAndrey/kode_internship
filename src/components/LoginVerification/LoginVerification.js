@@ -1,24 +1,44 @@
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useState, useEffect} from "react";
 import {Link, withRouter} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
+import {logout} from "../../redux/actions/authActions";
+import {clearSuccess} from "../../redux/actions/successActions";
+import {verify} from "../../redux/actions/authActions";
 import './style.scss'
 import Spinner from "../Loader/Spinner/Spinner";
 
-const LoginVerification = () => {
+const LoginVerification = ({history}) => {
 
     const [code, setCode] = useState('')
 
-    const {loading} = useSelector(
-        ({ui: {loading}}) => ({loading})
+    const {loading, authenticated, verified, success, error} = useSelector(
+        ({ui: {loading}, auth: {authenticated, verified}, success: {success}, error: {error}}) =>
+            ({loading, authenticated, verified, success, error})
     )
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (authenticated && verified) {
+            history.push('/pokemons')
+        } else if (!authenticated) {
+            history.push('/login')
+        }
+    })
+
+    const handleVerify = (event) => {
+        event.preventDefault()
+        if (code === success.code) {
+            verify()(dispatch)
+            clearSuccess()(dispatch)
+        }
+    }
 
     return (
         <Fragment>
             <div className="login-verification-page container-login-verification">
                 <h2>Подтвердите вход</h2>
                 <div className="input-item">
-                    <form onSubmit={() => {}}>
+                    <form onSubmit={handleVerify}>
                         <div className="content-input">
                             <div className="input-wrapper">
                                 <label className="headline">Код</label>
@@ -32,7 +52,7 @@ const LoginVerification = () => {
                             {loading ? <Spinner /> : 'Подтвердить'}
                         </button>
                     </form>
-                    <div className="link">
+                    <div className="link" onClick={() => logout()(dispatch)}>
                         <Link to="/login" className="back p2">Назад</Link>
                     </div>
                 </div>
