@@ -3,7 +3,7 @@ import './style.scss'
 
 const Filter = () => {
     return (
-        <div className='container'>Filter</div>
+        <div className='container-filter'>Filter</div>
     )
 }
 

@@ -368,6 +368,10 @@ header {
   max-width: 368px;
 }
 
+.pokemons-page {
+  display: flex;
+}
+
 @media screen and (max-width: 1200px) {
   .container,
   .container-content,
