@@ -1,14 +1,18 @@
 import React, {Fragment, useState, useEffect} from "react";
 import {Link, withRouter} from "react-router-dom";
 import {useSelector, useDispatch} from "react-redux";
-import {logout} from "../../redux/actions/authActions";
 import {clearSuccess} from "../../redux/actions/successActions";
-import {verify} from "../../redux/actions/authActions";
+import {verify, logout} from "../../redux/actions/authActions";
+import {setError, clearError} from "../../redux/actions/errorActions";
 import './style.scss'
 import Spinner from "../Loader/Spinner/Spinner";
+import ValidError from "../Modals/ValidError/ValidError";
+import ValidSuccess from "../Modals/ValidSuccess/ValidSuccess";
 
 const LoginVerification = ({history}) => {
 
+    const _ERROR_MESSAGE = 'Вы ввели не верный код.'
+    const _SUCCESS_MESSAGE = 'Ваш код - '
     const [code, setCode] = useState('')
 
     const {loading, authenticated, verified, success, error} = useSelector(
@@ -30,6 +34,8 @@ const LoginVerification = ({history}) => {
         if (code === success.code) {
             verify()(dispatch)
             clearSuccess()(dispatch)
+        } else {
+            setError(_ERROR_MESSAGE)(dispatch)
         }
     }
 
@@ -58,6 +64,8 @@ const LoginVerification = ({history}) => {
                 </div>
             </div>
 
+            {success.code ? <ValidSuccess successMessage={_SUCCESS_MESSAGE + success.code} /> : null }
+            {error.message ? <ValidError clear={() => clearError()(dispatch)} errorMessage={_ERROR_MESSAGE} /> : null }
         </Fragment>
     )
 }
