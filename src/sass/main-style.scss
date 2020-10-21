@@ -370,6 +370,7 @@ header {
 
 .pokemons-page {
   display: flex;
+  margin-top: $margin-4;
 }
 
 @media screen and (max-width: 1200px) {
