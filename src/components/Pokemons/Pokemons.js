@@ -13,8 +13,8 @@ const Pokemons = () => {
 
     useEffect(() => {
         const param = {
-            types: currentType,
-            subtypes: currentSubtype,
+            types: currentType === 'default' ? null : currentType,
+            subtype: currentSubtype === 'default' ? null : currentSubtype,
         }
         getCards(param)(dispatch)
     }, [currentType, currentSubtype])
