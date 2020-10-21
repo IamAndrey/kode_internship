@@ -5,28 +5,11 @@
   flex-grow: 1;
 
   .columns {
-    margin-left: -.75rem;
-    margin-right: -.75rem;
-    margin-top: -.75rem;
-
-    &:last-child {
-      margin-bottom: -.75rem;
-    }
+    margin: -.75rem;
   }
 
   .card-gallery {
     text-align: center;
-  }
-
-  .fade-in {
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-direction: normal;
-    animation-fill-mode: none;
-    animation-play-state: running;
-    animation-name: fadeIn;
   }
 
   .column {
@@ -39,9 +22,16 @@
 
   .card-gallery img {
     background-size: 95%;
-    margin: 10px 20px 10px 0;
+    margin: 10px;
     width: 240px;
     cursor: pointer;
+    transform: perspective(1px) translateZ(0);
+    transition-duration: .3s;
+    transition-property: transform;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
 }
