@@ -15,3 +15,9 @@ export const CLEAR_ERROR = 'CLEAR_ERROR'
 // success
 export const SET_SUCCESS = 'SET_SUCCESS'
 export const CLEAR_SUCCESS = 'CLEAR_SUCCESS'
+
+// category
+export const SET_TYPES = 'SET_TYPES'
+export const SET_SUBTYPES = 'SET_SUBTYPES'
+export const SET_CURRENT_TYPE = 'SET_CURRENT_TYPE'
+export const SET_CURRENT_SUBTYPE = 'SET_CURRENT_SUBTYPE'

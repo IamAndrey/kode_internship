@@ -8,20 +8,24 @@ import authReducer from "./reducers/authReducer";
 import uiReducer from "./reducers/uiReducer";
 import errorReducer from "./reducers/errorReducer";
 import successReducer from "./reducers/successReducer";
+import typeReducer from "./reducers/typeReducer";
+import subtypeReducer from "./reducers/subtypeReducer";
 
 const middleware = [thunk];
 
 const rootPersistConfig = {
     key: 'root',
     storage: storage,
-    blacklist: ['ui']
+    blacklist: ['ui', 'type', 'subtype']
 };
 
 const reducers = combineReducers({
     auth: authReducer,
     ui: uiReducer,
     error: errorReducer,
-    success: successReducer
+    success: successReducer,
+    type: typeReducer,
+    subtype: subtypeReducer
 });
 const persistedReducer = persistReducer(rootPersistConfig, reducers);
 
