@@ -6,14 +6,18 @@ import Card from "./Card";
 
 const Pokemons = () => {
 
-    const {cards} = useSelector(
-        ({cards: {cards}}) =>
-            ({cards}))
+    const {cards, currentType, currentSubtype} = useSelector(
+        ({cards: {cards}, type: {currentType}, subtype: {currentSubtype}}) =>
+            ({cards, currentType, currentSubtype}))
     const dispatch = useDispatch()
 
     useEffect(() => {
-        getCards()(dispatch)
-    }, [])
+        const param = {
+            types: currentType,
+            subtypes: currentSubtype,
+        }
+        getCards(param)(dispatch)
+    }, [currentType, currentSubtype])
 
     const list = cards.map(card => <Card card={card} key={card.id} /> )
 
