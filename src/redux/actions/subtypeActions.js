@@ -1,5 +1,5 @@
 import axios from "axios";
-import {SET_SUBTYPES} from "../types";
+import {SET_CURRENT_SUBTYPE, SET_SUBTYPES} from "../types";
 
 export const getSubtypes = () => dispatch => {
     axios.get('https://api.pokemontcg.io/v1/subtypes')
@@ -9,4 +9,8 @@ export const getSubtypes = () => dispatch => {
         .catch(err => {
             console.log(err)
         })
+}
+
+export const setCurrentSubtype = (subtype) => dispatch => {
+    dispatch({type: SET_CURRENT_SUBTYPE, payload: subtype})
 }

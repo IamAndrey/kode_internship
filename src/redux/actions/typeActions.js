@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {SET_TYPES} from "../types";
+import {SET_CURRENT_TYPE, SET_TYPES} from "../types";
 
 export const getTypes = () => dispatch => {
     axios.get('https://api.pokemontcg.io/v1/types')
@@ -9,4 +9,8 @@ export const getTypes = () => dispatch => {
         .catch(err => {
             console.log(err)
         })
+}
+
+export const setCurrentType = (type) => dispatch => {
+    dispatch({type: SET_CURRENT_TYPE, payload: type})
 }
