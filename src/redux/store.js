@@ -10,6 +10,7 @@ import errorReducer from "./reducers/errorReducer";
 import successReducer from "./reducers/successReducer";
 import typeReducer from "./reducers/typeReducer";
 import subtypeReducer from "./reducers/subtypeReducer";
+import cardsReducer from "./reducers/cardsReducer";
 
 const middleware = [thunk];
 
@@ -25,7 +26,8 @@ const reducers = combineReducers({
     error: errorReducer,
     success: successReducer,
     type: typeReducer,
-    subtype: subtypeReducer
+    subtype: subtypeReducer,
+    cards: cardsReducer
 });
 const persistedReducer = persistReducer(rootPersistConfig, reducers);
 
