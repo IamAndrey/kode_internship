@@ -4,7 +4,13 @@ import './style.scss'
 const Pokemons = () => {
 
     return (
-        <div className='container-pokemons'>Pokemons</div>
+        <div className='container-pokemons'>
+            <div className='columns card-gallery fade-in'>
+                <div className='column'>
+
+                </div>
+            </div>
+        </div>
     )
 }
 

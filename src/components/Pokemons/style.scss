@@ -3,4 +3,45 @@
 .container-pokemons {
   flex-basis: 70%;
   flex-grow: 1;
+
+  .columns {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+    margin-top: -.75rem;
+
+    &:last-child {
+      margin-bottom: -.75rem;
+    }
+  }
+
+  .card-gallery {
+    text-align: center;
+  }
+
+  .fade-in {
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: fadeIn;
+  }
+
+  .column {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: .75rem;
+  }
+
+  .card-gallery img {
+    background-size: 95%;
+    margin: 10px 20px 10px 0;
+    width: 240px;
+    cursor: pointer;
+  }
+
 }
