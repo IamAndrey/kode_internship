@@ -12,6 +12,11 @@
 
   .filter-content {
     margin: $margin-8 $margin-2 0 $margin-2;
+
+    p {
+      color: $gray-700;
+      margin-bottom: $margin-1;
+    }
   }
 
   .filter-row {

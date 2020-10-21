@@ -26,18 +26,20 @@ const Filter = () => {
         <div className='container-filter'>
             <h4>Выбор категорий</h4>
             <div className="filter-content">
+                <p>Types:</p>
                 <div className='filter-row'>
                     <select onChange={(event) => setCurrentType(event.currentTarget.value)(dispatch)} defaultValue='default'>
-                        <option value="default" disabled>Type:</option>
+                        <option value="default">None</option>
                         {typeOptions}
                     </select>
                     <img src={arrow} alt='arrow'/>
                 </div>
             </div>
             <div className="filter-content">
+                <p>Subtypes:</p>
                 <div className='filter-row'>
                     <select onChange={(event) => setCurrentSubtype(event.currentTarget.value)(dispatch)} defaultValue='default'>
-                        <option value="default" disabled>Subtype:</option>
+                        <option value="default">None</option>
                         {subtypeOptions}
                     </select>
                     <img src={arrow} alt='arrow'/>
