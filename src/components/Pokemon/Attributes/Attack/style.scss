@@ -1,0 +1,18 @@
+@import 'src/sass/variables.scss';
+
+
+.attribute-item {
+  display: flex;
+  justify-content: start;
+
+  .item {
+    margin-left: $margin-5;
+  }
+
+  .item:first-child {
+    margin-left: 0 !important;
+  }
+
+}
+
+

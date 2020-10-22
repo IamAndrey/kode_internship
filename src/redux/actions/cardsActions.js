@@ -27,7 +27,7 @@ export const getCard = (id) => dispatch => {
     axios.get('https://api.pokemontcg.io/v1/cards/' + id)
         .then(res => {
             dispatch({type: LOADING_STOP})
-            dispatch({type: SET_POKEMON, action: res.data.card})
+            dispatch({type: SET_POKEMON, payload: res.data.card})
         })
         .catch(err => {
             console.log(err)
