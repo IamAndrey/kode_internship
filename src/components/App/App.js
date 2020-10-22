@@ -26,7 +26,7 @@ function App() {
                             <Route path='/login' component={LoginPage} exact/>
                             <Route path='/login-verification' component={LoginVerificationPage} exact/>
                             <Route path='/pokemons' component={PokemonsPage} exact/>
-                            <Route path='/pokemon' component={PokemonPage} exact/>
+                            <Route path='/pokemons/:id' component={PokemonPage} exact/>
                         </Switch>
                     </div>
                 </BrowserRouter>
