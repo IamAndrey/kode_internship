@@ -1,0 +1,21 @@
+@import 'src/sass/variables.scss';
+
+.pokemon-page {
+
+  .column-one {
+    flex-basis: 40%;
+    flex-grow: 1;
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  .column-two {
+    flex-basis: 60%;
+    flex-grow: 1;
+    margin-left: $margin-4;
+  }
+
+}

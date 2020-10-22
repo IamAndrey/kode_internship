@@ -368,7 +368,8 @@ header {
   max-width: 368px;
 }
 
-.pokemons-page {
+.pokemons-page,
+.pokemon-page {
   display: flex;
   margin-top: $margin-4;
 }
