@@ -25,3 +25,4 @@ export const SET_CURRENT_SUBTYPE = 'SET_CURRENT_SUBTYPE'
 // pokemons
 export const SET_POKEMONS = 'SET_POKEMONS'
 export const CLEAR_CARDS = 'CLEAR_CARDS'
+export const SET_POKEMON = 'SET_POKEMONS'

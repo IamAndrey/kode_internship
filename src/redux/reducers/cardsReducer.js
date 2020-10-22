@@ -1,7 +1,8 @@
-import {CLEAR_CARDS, SET_POKEMONS} from "../types";
+import {CLEAR_CARDS, SET_POKEMON, SET_POKEMONS} from "../types";
 
 const initialState = {
-    cards: []
+    cards: [],
+    card: {}
 }
 
 export default function (state = initialState, action) {
@@ -10,6 +11,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 cards: action.payload
+            }
+        case SET_POKEMON:
+            return {
+                ...state,
+                card: action.payload
             }
         case CLEAR_CARDS:
             return initialState
