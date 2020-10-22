@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {getTypes, setCurrentType} from "../../redux/actions/typeActions";
 import {getSubtypes, setCurrentSubtype} from "../../redux/actions/subtypeActions";
 import './style.scss'
-import arrow from '../../assets/svg/arrow.svg'
+import arrow from '../../assets/svg/arrow-down.svg'
 import Option from "./Option";
 
 
