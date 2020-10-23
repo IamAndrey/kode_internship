@@ -1,10 +1,14 @@
 import React from "react";
+import {useDispatch} from "react-redux";
+import {logout} from "../../redux/actions/authActions";
 import {withRouter} from 'react-router-dom'
 import './style.scss'
 import {Link} from "react-router-dom";
 import arrowBack from '../../assets/svg/arrow-back.svg'
 
 const Header = ({history}) => {
+
+    const dispatch = useDispatch()
 
     return (
         <div className='container-header'>
@@ -16,7 +20,7 @@ const Header = ({history}) => {
             </div>
             <div className='header-right'>
                 <div className="link" >
-                    <Link to="#" className="exit p2">Выйти</Link>
+                    <Link to="/login" className="exit p2" onClick={() => logout()(dispatch)}>Выйти</Link>
                 </div>
             </div>
         </div>
