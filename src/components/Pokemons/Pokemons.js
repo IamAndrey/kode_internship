@@ -3,21 +3,24 @@ import {useSelector, useDispatch} from "react-redux";
 import {getCards} from "../../redux/actions/cardsActions";
 import './style.scss'
 import Card from "./Card";
+import Pagination from "../Pagination/Pagination";
 
 const Pokemons = () => {
 
-    const {cards, currentType, currentSubtype} = useSelector(
-        ({cards: {cards}, type: {currentType}, subtype: {currentSubtype}}) =>
-            ({cards, currentType, currentSubtype}))
+    const {cards, currentType, currentSubtype, currentPage, pageSize} = useSelector(
+        ({cards: {cards}, type: {currentType}, subtype: {currentSubtype}, pagination: {currentPage, pageSize}}) =>
+            ({cards, currentType, currentSubtype, currentPage, pageSize}))
     const dispatch = useDispatch()
 
     useEffect(() => {
         const param = {
-            types: currentType === 'default' ? null : currentType,
-            subtype: currentSubtype === 'default' ? null : currentSubtype,
+            types: currentType,
+            subtype: currentSubtype,
+            pageSize: pageSize,
+            page: currentPage
         }
         getCards(param)(dispatch)
-    }, [currentType, currentSubtype])
+    }, [currentType, currentSubtype, currentPage])
 
     const list = cards.map(card => <Card card={card} key={card.id} /> )
 
@@ -28,6 +31,7 @@ const Pokemons = () => {
                     {list}
                 </div>
             </div>
+            <Pagination />
         </div>
     )
 }

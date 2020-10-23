@@ -5,8 +5,9 @@ export const getCards = (data) => dispatch => {
 
     const config = {
         params: {
-            types: data.types || null,
-            subtype: data.subtype || null
+            ...data,
+            types: data.types === 'default' ? null : data.types,
+            subtype: data.subtype === 'default' ? null : data.subtype
         }
     }
 
