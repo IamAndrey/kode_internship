@@ -1,0 +1,10 @@
+@import 'src/sass/variables.scss';
+
+.card-skeleton {
+  display: inline-block;
+  width: 240px;
+  height: 335px;
+  margin: 10px;
+  background-color: $gray-100;
+  border-radius: 10px;
+}
