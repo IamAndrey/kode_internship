@@ -11,6 +11,7 @@ import successReducer from "./reducers/successReducer";
 import typeReducer from "./reducers/typeReducer";
 import subtypeReducer from "./reducers/subtypeReducer";
 import cardsReducer from "./reducers/cardsReducer";
+import paginationReducer from "./reducers/paginationReducer";
 
 const middleware = [thunk];
 
@@ -27,7 +28,8 @@ const reducers = combineReducers({
     success: successReducer,
     type: typeReducer,
     subtype: subtypeReducer,
-    cards: cardsReducer
+    cards: cardsReducer,
+    pagination: paginationReducer
 });
 const persistedReducer = persistReducer(rootPersistConfig, reducers);
 

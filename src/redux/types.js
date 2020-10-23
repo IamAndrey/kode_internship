@@ -26,3 +26,7 @@ export const SET_CURRENT_SUBTYPE = 'SET_CURRENT_SUBTYPE'
 export const SET_POKEMONS = 'SET_POKEMONS'
 export const CLEAR_CARDS = 'CLEAR_CARDS'
 export const SET_POKEMON = 'SET_POKEMON'
+
+// pagination
+export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
+export const CLEAR_PAGINATION = 'CLEAR_PAGINATION'
