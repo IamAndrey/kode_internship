@@ -1,4 +1,4 @@
-import {LOADING_START, LOADING_STOP, LOGIN, LOGOUT, VERIFIED} from "../types";
+import {CLEAR_PAGINATION, LOADING_START, LOADING_STOP, LOGIN, LOGOUT, VERIFIED} from "../types";
 
 export const login = () => dispatch => {
     dispatch({type: LOADING_START})
@@ -10,6 +10,7 @@ export const login = () => dispatch => {
 
 export const logout = () => dispatch => {
     dispatch({type: LOGOUT})
+    dispatch({type: CLEAR_PAGINATION})
 }
 
 export const verify = () => dispatch => {
