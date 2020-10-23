@@ -12,6 +12,7 @@ import PokemonPage from "../../pages/PokemonPage";
 import {store, persistor} from "../../redux/store";
 import {Provider} from 'react-redux'
 import {PersistGate} from 'redux-persist/integration/react'
+import AuthRoute from "../Auth/AuthRoute";
 
 function App() {
     return (
@@ -25,8 +26,8 @@ function App() {
                         <Switch>
                             <Route path='/login' component={LoginPage} exact/>
                             <Route path='/login-verification' component={LoginVerificationPage} exact/>
-                            <Route path='/pokemons' component={PokemonsPage} exact/>
-                            <Route path='/pokemons/:id' component={PokemonPage} exact/>
+                            <AuthRoute path='/pokemons' component={PokemonsPage} exact/>
+                            <AuthRoute path='/pokemons/:id' component={PokemonPage} exact/>
                         </Switch>
                     </div>
                 </BrowserRouter>
