@@ -1,0 +1,12 @@
+@import "src/sass/variables";
+
+.missing {
+  display: block;
+
+  h3 {
+    text-align: center;
+    line-height: 32px;
+    margin-top: $margin-3;
+  }
+}
+

@@ -4,6 +4,7 @@ import {getCards} from "../../redux/actions/cardsActions";
 import './style.scss'
 import Card from "./Card";
 import Pagination from "../Pagination/Pagination";
+import Missing from "../Missing/Missing";
 
 const Pokemons = () => {
 
@@ -22,16 +23,18 @@ const Pokemons = () => {
         getCards(param)(dispatch)
     }, [currentType, currentSubtype, currentPage])
 
-    const list = cards.map(card => <Card card={card} key={card.id} /> )
+    const list = cards.map(card => <Card card={card} key={card.id}/>)
 
     return (
         <div className='container-pokemons'>
             <div className='columns card-gallery'>
                 <div className='column'>
-                    {list}
+                    {list.length === 0 ?
+                        <Missing/> :
+                        list}
                 </div>
             </div>
-            <Pagination />
+            <Pagination/>
         </div>
     )
 }
