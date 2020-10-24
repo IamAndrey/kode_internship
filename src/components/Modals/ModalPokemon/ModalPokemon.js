@@ -19,9 +19,9 @@ const ModalPokemon = ({image, close}) => {
 
     return (
         <div className="fixed-overlay">
-            <div className="modal" ref={ref}>
+            <div className="modal">
                 <div className="modal_container">
-                    <img src={image} alt='card'/>
+                    <img src={image} alt='card' ref={ref}/>
                 </div>
             </div>
         </div>
