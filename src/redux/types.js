@@ -21,6 +21,8 @@ export const SET_TYPES = 'SET_TYPES'
 export const SET_SUBTYPES = 'SET_SUBTYPES'
 export const SET_CURRENT_TYPE = 'SET_CURRENT_TYPE'
 export const SET_CURRENT_SUBTYPE = 'SET_CURRENT_SUBTYPE'
+export const CLEAR_TYPES = 'CLEAR_TYPES';
+export const CLEAR_SUBTYPES = 'CLEAR_SUBTYPES';
 
 // pokemons
 export const SET_POKEMONS = 'SET_POKEMONS'

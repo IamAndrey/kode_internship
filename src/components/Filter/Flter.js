@@ -9,9 +9,9 @@ import Option from "./Option";
 
 const Filter = () => {
 
-    const {types, subtypes} = useSelector(
-        ({type: {types}, subtype: {subtypes}}) =>
-            ({types, subtypes}))
+    const {types, subtypes, currentType, currentSubtype} = useSelector(
+        ({type: {types, currentType}, subtype: {subtypes, currentSubtype}}) =>
+            ({types, subtypes, currentType, currentSubtype}))
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -28,7 +28,8 @@ const Filter = () => {
             <div className="filter-content">
                 <p>Types:</p>
                 <div className='filter-row'>
-                    <select onChange={(event) => setCurrentType(event.currentTarget.value)(dispatch)} defaultValue='default'>
+                    <select onChange={(event) => setCurrentType(event.currentTarget.value)(dispatch)}
+                            value={currentType}>
                         <option value="default">None</option>
                         {typeOptions}
                     </select>
@@ -38,7 +39,8 @@ const Filter = () => {
             <div className="filter-content">
                 <p>Subtypes:</p>
                 <div className='filter-row'>
-                    <select onChange={(event) => setCurrentSubtype(event.currentTarget.value)(dispatch)} defaultValue='default'>
+                    <select onChange={(event) => setCurrentSubtype(event.currentTarget.value)(dispatch)}
+                            value={currentSubtype}>
                         <option value="default">None</option>
                         {subtypeOptions}
                     </select>

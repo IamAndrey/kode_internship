@@ -1,4 +1,4 @@
-import {SET_CURRENT_TYPE, SET_TYPES} from "../types";
+import {CLEAR_TYPES, SET_CURRENT_TYPE, SET_TYPES} from "../types";
 
 const initialState = {
     types: [],
@@ -17,6 +17,8 @@ export default function (state = initialState, action) {
                 ...state,
                 currentType: action.payload
             }
+        case CLEAR_TYPES:
+            return initialState
         default:
             return state
     }

@@ -1,4 +1,4 @@
-import {SET_CURRENT_SUBTYPE, SET_SUBTYPES} from "../types";
+import {CLEAR_SUBTYPES, SET_CURRENT_SUBTYPE, SET_SUBTYPES} from "../types";
 
 
 const initialState = {
@@ -18,6 +18,8 @@ export default function (state = initialState, action) {
                 ...state,
                 currentSubtype: action.payload
             }
+        case CLEAR_SUBTYPES:
+            return initialState
         default:
             return state
     }

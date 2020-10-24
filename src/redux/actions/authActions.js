@@ -1,4 +1,7 @@
-import {CLEAR_PAGINATION, LOADING_START, LOADING_STOP, LOGIN, LOGOUT, VERIFIED} from "../types";
+import {LOADING_START, LOADING_STOP, LOGIN, LOGOUT, VERIFIED} from "../types";
+import {clearTypes} from "./typeActions";
+import {clearSubtypes} from "./subtypeActions";
+import {clearPage} from "./paginationActions";
 
 export const login = () => dispatch => {
     dispatch({type: LOADING_START})
@@ -10,7 +13,9 @@ export const login = () => dispatch => {
 
 export const logout = () => dispatch => {
     dispatch({type: LOGOUT})
-    dispatch({type: CLEAR_PAGINATION})
+    dispatch(clearPage())
+    dispatch(clearTypes())
+    dispatch(clearSubtypes())
 }
 
 export const verify = () => dispatch => {

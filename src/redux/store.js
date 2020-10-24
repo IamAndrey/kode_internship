@@ -18,7 +18,7 @@ const middleware = [thunk];
 const rootPersistConfig = {
     key: 'root',
     storage: storage,
-    blacklist: ['ui', 'type', 'subtype', 'cards']
+    blacklist: ['ui', 'cards']
 };
 
 const reducers = combineReducers({
