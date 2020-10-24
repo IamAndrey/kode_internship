@@ -37,5 +37,26 @@
       width: 90%;
     }
   }
+}
+@media screen and (max-width: 700px) {
+  .pokemon-page {
+    .column-two {
+      margin-left: 0;
+    }
+  }
+}
 
+
+@media screen and (max-width: 576px) {
+  .pokemon-page {
+    .column-one {
+      flex-basis: 50%;
+    }
+    .column-two {
+      .pokemon-attribute {
+        font-size: 1rem;
+
+      }
+    }
+  }
 }

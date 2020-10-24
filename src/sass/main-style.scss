@@ -374,6 +374,18 @@ header {
   margin-top: $margin-4;
 }
 
+@media screen and (max-width: 900px) {
+  .pokemon-page {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .pokemons-page {
+    display: block;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   .container,
   .container-content,
