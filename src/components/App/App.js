@@ -13,6 +13,7 @@ import {store, persistor} from "../../redux/store";
 import {Provider} from 'react-redux'
 import {PersistGate} from 'redux-persist/integration/react'
 import AuthRoute from "../Auth/AuthRoute";
+import Error_404 from "../Errors/404";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                             <Route path='/login-verification' component={LoginVerificationPage} exact/>
                             <AuthRoute path='/pokemons' component={PokemonsPage} exact/>
                             <AuthRoute path='/pokemons/:id' component={PokemonPage} exact/>
+                            <Route component={Error_404} />
                         </Switch>
                     </div>
                 </BrowserRouter>
