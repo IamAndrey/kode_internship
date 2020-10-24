@@ -26,7 +26,7 @@ const Pokemons = () => {
 
     return (
         <div className='container-pokemons'>
-            <div className='columns card-gallery fade-in'>
+            <div className='columns card-gallery'>
                 <div className='column'>
                     {list}
                 </div>

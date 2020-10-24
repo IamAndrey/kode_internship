@@ -1,6 +1,8 @@
 import React, {Fragment} from "react";
 import {useSelector} from "react-redux";
 import CardSkeleton from "../Loader/Skeleton/CardSkeleton";
+import Magnifier from '../../assets/svg/Magnifier.svg'
+import {Link} from "react-router-dom";
 
 const Card = ({card}) => {
 
@@ -10,9 +12,14 @@ const Card = ({card}) => {
         <Fragment>
             {loading ?
                 <CardSkeleton /> :
-                <a href={`/pokemons/${card.id}`}>
-                    <img src={card.imageUrl} alt='Card'/>
-                </a>
+                <div className='card'>
+                    <Link to={`/pokemons/${card.id}`} >
+                        <img src={card.imageUrl} alt='Card'/>
+                    </Link>
+                    <div className='large'>
+                        <img src={Magnifier} alt='Magnifier'/>
+                    </div>
+                </div>
             }
         </Fragment>
     )
