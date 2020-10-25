@@ -14,6 +14,7 @@ import {Provider} from 'react-redux'
 import {PersistGate} from 'redux-persist/integration/react'
 import AuthRoute from "../Auth/AuthRoute";
 import Error_404 from "../Errors/404";
+import HomePage from "../../pages/HomePage";
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                     </header>
                     <div className='container'>
                         <Switch>
+                            <Route path='/' component={HomePage} exact/>
                             <Route path='/login' component={LoginPage} exact/>
                             <Route path='/login-verification' component={LoginVerificationPage} exact/>
                             <AuthRoute path='/pokemons' component={PokemonsPage} exact/>
