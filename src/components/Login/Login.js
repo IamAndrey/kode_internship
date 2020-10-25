@@ -9,11 +9,12 @@ import look from '../../assets/svg/look-pass.svg'
 import {generateCode, lookPass} from "../../tools/lookPass";
 import Spinner from "../Loader/Spinner/Spinner";
 import ValidError from "../Modals/ValidError/ValidError";
+import ValidSuccess from "../Modals/ValidSuccess/ValidSuccess";
 
 const Login = ({history}) => {
 
-    const _USER_LOGIN = 'test';
-    const _USER_PASSWORD = '123456';
+    const _USER_LOGIN = 'kode@kode.ru';
+    const _USER_PASSWORD = 'Enk0deng';
     const _ERROR_MESSAGE = 'Ваш логин или пароль не совпадают.'
 
     const [login, setLogin] = useState('')
@@ -79,6 +80,7 @@ const Login = ({history}) => {
                 </div>
             </div>
 
+            <ValidSuccess successMessage={`Данные для входа: Логин - ${_USER_LOGIN}, Пароль - ${_USER_PASSWORD}`} />
             {error.message ? <ValidError clear={() => clearError()(dispatch)} errorMessage={error.message}/> : null}
         </Fragment>
     )
